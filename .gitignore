@@ -1,0 +1,14 @@
+# Visual Studio specific files
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# Environment-specific configuration
+App.config
+
+# NuGet packages
+packages/
