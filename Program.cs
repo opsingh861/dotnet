@@ -340,7 +340,7 @@ this is multiline comment
 // MyClass myClass = new(); // Top-level statement
 
 // Person p = new Person(); // Top-level statement 
-using ClassDemo;  // we are importing or something so that we can use the things present in this namespace which is alike a container
+// using ClassDemo;  // we are importing or something so that we can use the things present in this namespace which is alike a container
 
 // Person p = new(); // both are same if you want to create an object, but in case of declaring it as var, you need to new function with proper constructer
 
@@ -351,179 +351,250 @@ using ClassDemo;  // we are importing or something so that we can use the things
 
 
 
-Person p = new();
-Console.WriteLine(p.Name);
-p.Name = "something";
-Console.WriteLine(p.Name);
+// Person p = new();
+// Console.WriteLine(p.Name);
+// p.Name = "something";
+// Console.WriteLine(p.Name);
 
 
-// use of enum 
+// // use of enum 
 
-Level level = Level.Low;
-Console.WriteLine(level);
-
-
-// exception handling
+// Level level = Level.Low;
+// Console.WriteLine(level);
 
 
-static void divide(double a, double b)
-{
-    try
-    {
-        Console.WriteLine(a / b);
-    }
-    catch (Exception e)
-    {
+// // exception handling
 
-        Console.WriteLine(e);
-    }
-}
 
-divide(5, 0);
+// static void divide(double a, double b)
+// {
+//     try
+//     {
+//         Console.WriteLine(a / b);
+//     }
+//     catch (Exception e)
+//     {
+
+//         Console.WriteLine(e);
+//     }
+// }
+
+// divide(5, 0);
 
 // use of throw keyword
-static void checkAge(int age)
+// static void checkAge(int age)
+// {
+//     if (age < 18)
+//     {
+//         throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+//     }
+//     else
+//     {
+//         Console.WriteLine("Access granted - You are old enough!");
+//     }
+// }
+
+// checkAge(17);
+
+// file handling
+
+// string statement = "This is statement";
+// File.WriteAllText("a.txt",statement);
+
+
+
+
+// namespace ClassDemo
+// { // namespaces are like containers to hold different classes, interfaces, enums, structs and all (no variables directly)
+
+//     // public class Person // either create it in another file or just create this class below after instantiation of object
+//     // {
+//     //     // internal string name = "Aditya Dhanraj"; // by default members of class are private but classes and struct are internal as by default
+//     //     public string name = "Aditya Dhanraj";
+//     // }
+
+//     // public class Person 
+//     // {
+//     //     public string name;
+//     //     public Person(string name) // we can define constructer using this and there is one more way
+//     //     {
+//     //         this.name = name;
+//     //     }
+//     // }
+//     // public class Person(string name) // using this we can also take argument in constructer
+//     // {
+//     //     // public string Name = name; // this is the normal way
+
+//     //     // public string Name { get; } = name; // using this we can decide if some can get or set the value of member (this is short hand for property)
+
+//     // }
+//     // public class Person
+//     // {
+//     //     // use of properties, which maintain encapsulation 
+//     //     private string name = "Aditya"; // field
+//     //     public string Name   // property
+//     //     {
+//     //         get { return name; }
+//     //         set { name = value; }
+//     //     }
+//     // }
+
+//     // //  inheritence and polimorphism (sealed keyword can be used by which we cannot inherit that sealed class just like final keyword from Java)
+//     // class Pet(string name)
+//     // {
+//     //     public string Name = name;
+
+//     //     public virtual void MakeSound() // if we want that in near future we can override this method then we need to make it virtual
+//     //     {
+//     //         Console.WriteLine($"{Name} is making sound");
+//     //     }
+//     // }
+
+//     // class Cat(string Name) : Pet(Name) // there is name member inside Cat because now it is inheriting Pet, so we need to pass name
+//     // {
+//     //     public override void MakeSound()  // base class overrides the function of other classes in that case we need to use virtual keyword in the base class method and override in derived class method
+//     //     {
+//     //         Console.WriteLine($"Cat named {Name} is making meow sound");
+//     //     }
+//     // }
+
+
+//     // Abstraction
+
+//     // abstract class Animal // we cannot create instance of abstract classes
+//     // {
+//     //     // Abstract method (does not have a body)
+//     //     public abstract void AnimalSound();
+//     //     // Regular method
+//     //     public void Sleep()
+//     //     {
+//     //         Console.WriteLine("Zzz");
+//     //     }
+//     // }
+
+//     // // Derived class (inherit from Animal)
+//     // class Pig : Animal
+//     // {
+//     //     public override void AnimalSound()
+//     //     {
+//     //         // The body of animalSound() is provided here
+//     //         Console.WriteLine("The pig says: wee wee");
+//     //     }
+//     // }
+
+
+//     // interface
+
+//     // interface IAnimal // will only have abstract methods and cannot create objects as well (it's better to have I before interface name) (abstract and public by default)
+//     // {
+//     //     // string name = 5; // error. cannot have field or attributes
+//     //     void AnimalSound(); // interface method (does not have a body)
+//     // }
+
+//     // // Pig "implements" the IAnimal interface
+//     // class Pig : IAnimal
+//     // {
+//     //     public void AnimalSound()
+//     //     {
+//     //         // The body of animalSound() is provided here
+//     //         Console.WriteLine("The pig says: wee wee");
+//     //     }
+//     // }
+
+
+//     // // mutliple inheritence
+
+//     // interface IFirstInterface
+//     // {
+//     //     void MyMethod(); // interface method
+//     // }
+
+//     // interface ISecondInterface
+//     // {
+//     //     void MyOtherMethod(); // interface method
+//     // }
+
+//     // // Implement multiple interfaces
+//     // class DemoClass : IFirstInterface, ISecondInterface
+//     // {
+//     //     public void MyMethod()
+//     //     {
+//     //         Console.WriteLine("Some text..");
+//     //     }
+//     //     public void MyOtherMethod()
+//     //     {
+//     //         Console.WriteLine("Some other text...");
+//     //     }
+//     // }
+
+//     // // enum 
+//     // enum Level
+//     // {
+//     //     Low,
+//     //     Medium,
+//     //     High
+//     // }
+// }
+
+
+// Language integrated query (LINQ)
+
+using Microsoft.VisualBasic;
+
+List<int> list = [55, 22, 53];
+
+// IEnumerable<int> ints =
+//     from i in list
+//     where i > 22
+//     select i;
+
+// IEnumerable<int> ints = // sorted in descending order
+//     from i in list
+//     where i > 22
+//     orderby i descending
+//     select i;
+
+
+
+// foreach (int i in ints)
+// {
+//     Console.WriteLine(i);
+// }
+
+
+IEnumerable<string> ints =
+    from i in list
+    where i > 22
+    orderby i descending
+    select $"The number is {i}";
+
+foreach (var item in ints)
 {
-    if (age < 18)
-    {
-        throw new ArithmeticException("Access denied - You must be at least 18 years old.");
-    }
-    else
-    {
-        Console.WriteLine("Access granted - You are old enough!");
-    }
+    Console.WriteLine(item);
 }
 
-checkAge(17);
+Console.WriteLine(ints.Count());
 
-namespace ClassDemo
-{ // namespaces are like containers to hold different classes, interfaces, enums, structs and all (no variables directly)
-
-    // public class Person // either create it in another file or just create this class below after instantiation of object
-    // {
-    //     // internal string name = "Aditya Dhanraj"; // by default members of class are private but classes and struct are internal as by default
-    //     public string name = "Aditya Dhanraj";
-    // }
-
-    // public class Person 
-    // {
-    //     public string name;
-    //     public Person(string name) // we can define constructer using this and there is one more way
-    //     {
-    //         this.name = name;
-    //     }
-    // }
-    // public class Person(string name) // using this we can also take argument in constructer
-    // {
-    //     // public string Name = name; // this is the normal way
-
-    //     // public string Name { get; } = name; // using this we can decide if some can get or set the value of member (this is short hand for property)
-
-    // }
-    public class Person
-    {
-        // use of properties, which maintain encapsulation 
-        private string name = "Aditya"; // field
-        public string Name   // property
-        {
-            get { return name; }
-            set { name = value; }
-        }
-    }
-
-    //  inheritence and polimorphism (sealed keyword can be used by which we cannot inherit that sealed class just like final keyword from Java)
-    class Pet(string name)
-    {
-        public string Name = name;
-
-        public virtual void MakeSound() // if we want that in near future we can override this method then we need to make it virtual
-        {
-            Console.WriteLine($"{Name} is making sound");
-        }
-    }
-
-    class Cat(string Name) : Pet(Name) // there is name member inside Cat because now it is inheriting Pet, so we need to pass name
-    {
-        public override void MakeSound()  // base class overrides the function of other classes in that case we need to use virtual keyword in the base class method and override in derived class method
-        {
-            Console.WriteLine($"Cat named {Name} is making meow sound");
-        }
-    }
+// we can also convert IEnumerable to List
+List<string> strings = ints.ToList();
 
 
-    // Abstraction
+// also we can do chaining of functions instead of LINQ
 
-    // abstract class Animal // we cannot create instance of abstract classes
-    // {
-    //     // Abstract method (does not have a body)
-    //     public abstract void AnimalSound();
-    //     // Regular method
-    //     public void Sleep()
-    //     {
-    //         Console.WriteLine("Zzz");
-    //     }
-    // }
-
-    // // Derived class (inherit from Animal)
-    // class Pig : Animal
-    // {
-    //     public override void AnimalSound()
-    //     {
-    //         // The body of animalSound() is provided here
-    //         Console.WriteLine("The pig says: wee wee");
-    //     }
-    // }
+var ints1 = list.Where(s => s > 23)
+                .OrderByDescending(s => s); // it is same as the above query
 
 
-    // interface
-
-    interface IAnimal // will only have abstract methods and cannot create objects as well (it's better to have I before interface name) (abstract and public by default)
-    {
-        // string name = 5; // error. cannot have field or attributes
-        void AnimalSound(); // interface method (does not have a body)
-    }
-
-    // Pig "implements" the IAnimal interface
-    class Pig : IAnimal
-    {
-        public void AnimalSound()
-        {
-            // The body of animalSound() is provided here
-            Console.WriteLine("The pig says: wee wee");
-        }
-    }
-
-
-    // mutliple inheritence
-
-    interface IFirstInterface
-    {
-        void MyMethod(); // interface method
-    }
-
-    interface ISecondInterface
-    {
-        void MyOtherMethod(); // interface method
-    }
-
-    // Implement multiple interfaces
-    class DemoClass : IFirstInterface, ISecondInterface
-    {
-        public void MyMethod()
-        {
-            Console.WriteLine("Some text..");
-        }
-        public void MyOtherMethod()
-        {
-            Console.WriteLine("Some other text...");
-        }
-    }
-
-    // enum 
-    enum Level
-    {
-        Low,
-        Medium,
-        High
-    }
+foreach (int i in ints1)
+{
+    Console.WriteLine(i);
 }
+
+// lambda function 
+
+//  first int is return type and other two are parameter list
+Func<int, int, int> AddFunction = (x, y) => x + y;
+
+int result = AddFunction(3, 5);
+
+Console.WriteLine(AddFunction(3, 5));
